@@ -91,3 +91,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Contributing
 
 Feel free to submit issues or pull requests for any improvements or bug fixes.
+
+Enjoy your music download experience! 🎶
