@@ -46,6 +46,7 @@ Important: Use a VPN when running the script to ensure privacy and compliance wi
 This bash script is designed for Unix-like systems (e.g., Linux, macOS). Windows users can run it via WSL (Windows Subsystem for Linux) or Git Bash.
 
 To keep your downloads organized and avoid cluttering your home folder, follow these steps:
+
 Step 1: Get the Script
 
 You have two options to obtain the script—cloning the repository or downloading it directly.
@@ -54,8 +55,9 @@ You have two options to obtain the script—cloning the repository or downloadin
     If you have git installed, clone the SpotiDrop repository:
     bash
 
-git clone https://github.com/yourusername/SpotiDrop.git
+git clone https://github.com/MikiyG/SpotiDrop.git
 cd SpotiDrop
+
 Option 2: Download the Script Directly
 Use curl to download spotify.sh into your desired folder:
 bash
