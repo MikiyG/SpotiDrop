@@ -67,16 +67,19 @@ bash
 Step 2: Set Up the Download Folder
 
 Create a folder where you want the songs to be saved, then navigate to it:
+
 bash
 mkdir my_playlist_songs
 cd my_playlist_songs
 
 If you downloaded the script directly (Option 2), ensure it’s in this folder by running the curl command above here.
+
 Step 3: Make the Script Executable
 
 Grant execute permissions to the script:
 bash
 chmod +x spotify.sh
+
 Step 4: Run the Script
 
 Run the script, specifying the download folder (use . for the current folder):
@@ -91,6 +94,7 @@ bash
 ./spotify.sh /path/to/download/folder
 
 If the folder doesn’t exist, the script will create it.
+
 Step 5: Enter the Playlist URL
 
 When prompted, paste the Spotify playlist URL and press Enter. The script will download the songs.
