@@ -1,95 +1,52 @@
-SpotiDrop: Spotify Playlist Downloader
-Overview
+SpotiDrop
 
-SpotiDrop is a simple Bash script that allows users to download songs from a Spotify playlist to a specified local folder using the spotdl tool. The script automates the process of downloading all tracks from a playlist, ensuring that dependencies such as spotdl and ffmpeg are present before starting the download.
-Features
-
-    Downloads songs from a Spotify playlist to a user-defined folder.
-
-    Automatically checks and installs required dependencies (spotdl and ffmpeg).
-
-    Prompts the user for the Spotify playlist URL.
-
-    Suggests using a VPN for privacy when downloading content.
-
-Requirements
-
-Before using the script, you need the following dependencies installed on your system:
-
-    spotdl: A command-line tool to download songs from Spotify.
-
-    ffmpeg: Required for handling audio formats during the download process.
-
-Install Dependencies
-
-    Install spotdl:
-
-        Run:
-
-    pip3 install spotdl
-
-Install ffmpeg:
-
-    On Ubuntu:
-
-sudo apt-get install ffmpeg
-
-On macOS:
-
-        brew install ffmpeg
-
-        On Windows:
-
-            Download from ffmpeg.org and add it to your system's PATH.
-
-Optional: Use a VPN
-
-The script reminds the user to use a VPN for privacy while downloading Spotify content.
+SpotiDrop is a bash script that enables you to download songs from a Spotify playlist to a specified folder using the spotdl tool.
 Usage
 
-    Download the Script: Save the script as spotidrop.sh or any other name you prefer.
+To run SpotiDrop, execute the script with the path to your desired download folder as an argument:
+bash
+./spotify.sh /path/to/download/folder
 
-    Make the Script Executable:
+For example, to download songs to the current directory:
+bash
+./spotify.sh .
 
-chmod +x spotidrop.sh
+If no argument is provided, the script will display a usage message and exit:
+text
+Usage: ./spotify.sh /path/to/download/folder
+Example: ./spotify.sh . (downloads to current folder)
+Prerequisites
 
-Run the Script:
+Before using SpotiDrop, you need to install the following dependencies:
 
-./spotidrop.sh /path/to/download/folder
+    spotdl: A tool for downloading Spotify songs.
+    ffmpeg: A multimedia framework required by spotdl to process audio files.
 
-    Replace /path/to/download/folder with your desired destination for the downloaded songs. If you want to download to the current directory, simply use ..
+Installing spotdl
 
-    Example:
+Install spotdl using pip:
+bash
+pip3 install spotdl
+Installing ffmpeg
 
-        ./spotidrop.sh .
+    Ubuntu:
+    bash
 
-    Enter the Playlist URL:
+sudo apt-get install ffmpeg
+macOS:
+bash
 
-        When prompted, enter the Spotify playlist URL. The script will begin downloading the playlist to the specified folder.
+    brew install ffmpeg
+    Windows: Download ffmpeg from ffmpeg.org and add it to your system PATH.
 
-Example
+How It Works
 
-$ ./spotidrop.sh ~/Music
-Reminder: Use a VPN for privacy while downloading.
-Press Enter to continue...
+The script performs the following steps:
 
-Enter the Spotify playlist URL: https://open.spotify.com/playlist/xyz
-Downloading playlist to ~/Music...
-Download complete!
-
-Troubleshooting
-
-    spotdl is not installed: The script will display an error message if spotdl is not installed. Install it with pip3 install spotdl.
-
-    ffmpeg is not installed: If ffmpeg is missing, the script will notify you. Install it using the provided platform-specific instructions.
-
-    Invalid Playlist URL: If you don't provide a valid URL, the script will prompt an error and exit.
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-Contributing
-
-Feel free to submit issues or pull requests for any improvements or bug fixes.
-
-Enjoy your music download experience! 🎶
+    Checks for Output Directory: Ensures a download folder is provided as an argument. If not, it shows the usage message and exits.
+    Creates the Directory: If the specified folder doesn’t exist, it creates it automatically.
+    Verifies Dependencies: Checks if spotdl and ffmpeg are installed. If either is missing, it provides installation instructions and exits.
+    VPN Reminder: Displays a reminder to use a VPN for privacy and waits for you to press Enter.
+    Prompts for Playlist URL: Asks you to input the Spotify playlist URL.
+    Validates the URL: Ensures a URL is provided; otherwise, it exits with an error.
+    Downloads the Playlist: Uses spotdl to download the playlist to the specified folder and confirms when the download is complete.
