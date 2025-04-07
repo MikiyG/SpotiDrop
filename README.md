@@ -1,116 +1,93 @@
 SpotiDrop: Spotify Playlist Downloader
+Overview
 
-This script allows you to download songs from a Spotify playlist using the spotdl tool. It checks for required dependencies (spotdl and ffmpeg), prompts for a Spotify playlist URL, and saves the songs to a specified folder.
-Prerequisites
+SpotiDrop is a simple Bash script that allows users to download songs from a Spotify playlist to a specified local folder using the spotdl tool. The script automates the process of downloading all tracks from a playlist, ensuring that dependencies such as spotdl and ffmpeg are present before starting the download.
+Features
 
-To use this script, ensure the following are installed on your system:
+    Downloads songs from a Spotify playlist to a user-defined folder.
 
-    Python 3.x: Required to run spotdl.
-    pip3: Used to install spotdl.
-    spotdl: The Spotify downloader tool.
-    ffmpeg: For audio processing.
-    git: Optional, for cloning the repository.
+    Automatically checks and installs required dependencies (spotdl and ffmpeg).
 
-Installation
+    Prompts the user for the Spotify playlist URL.
 
-Follow these steps to set up the dependencies:
+    Suggests using a VPN for privacy when downloading content.
 
-    Verify Python 3.x and pip3
-    Ensure they’re installed. Check with:
-    bash
+Requirements
 
-python3 --version
-pip3 --version
-If not installed, download them from python.org.
-Install spotdl
-Run this command:
-bash
-pip3 install spotdl
-Install ffmpeg
-Instructions depend on your operating system:
+Before using the script, you need the following dependencies installed on your system:
 
-    Ubuntu:
-    bash
+    spotdl: A command-line tool to download songs from Spotify.
+
+    ffmpeg: Required for handling audio formats during the download process.
+
+Install Dependencies
+
+    Install spotdl:
+
+        Run:
+
+    pip3 install spotdl
+
+Install ffmpeg:
+
+    On Ubuntu:
 
 sudo apt-get install ffmpeg
-macOS:
-bash
+
+On macOS:
 
         brew install ffmpeg
-        Windows: Download from ffmpeg.org, extract, and add to your system’s PATH.
 
+        On Windows:
+
+            Download from ffmpeg.org and add it to your system's PATH.
+
+Optional: Use a VPN
+
+The script reminds the user to use a VPN for privacy while downloading Spotify content.
 Usage
 
-Important: Use a VPN when running the script to ensure privacy and compliance with terms of service.
+    Download the Script: Save the script as spotidrop.sh or any other name you prefer.
 
-This bash script is designed for Unix-like systems (e.g., Linux, macOS). Windows users can run it via WSL (Windows Subsystem for Linux) or Git Bash.
+    Make the Script Executable:
 
-To keep your downloads organized and avoid cluttering your home folder, follow these steps:
-Step 1: Get the Script
+chmod +x spotidrop.sh
 
-You have two options to obtain the script—cloning the repository or downloading it directly.
+Run the Script:
 
-    Option 1: Clone the Repository
-    If you have git installed, clone the SpotiDrop repository:
-    bash
+./spotidrop.sh /path/to/download/folder
 
-git clone https://github.com/yourusername/SpotiDrop.git
-cd SpotiDrop
-Option 2: Download the Script Directly
-Use curl to download spotify.sh into your desired folder:
-bash
+    Replace /path/to/download/folder with your desired destination for the downloaded songs. If you want to download to the current directory, simply use ..
 
-    curl -O https://raw.githubusercontent.com/yourusername/SpotiDrop/main/spotify.sh
+    Example:
 
-Step 2: Set Up the Download Folder
+        ./spotidrop.sh .
 
-Create a folder where you want the songs to be saved, then navigate to it:
-bash
-mkdir my_playlist_songs
-cd my_playlist_songs
+    Enter the Playlist URL:
 
-If you downloaded the script directly (Option 2), ensure it’s in this folder by running the curl command above here.
-Step 3: Make the Script Executable
+        When prompted, enter the Spotify playlist URL. The script will begin downloading the playlist to the specified folder.
 
-Grant execute permissions to the script:
-bash
-chmod +x spotify.sh
-Step 4: Run the Script
-
-Run the script, specifying the download folder (use . for the current folder):
-bash
-./spotify.sh .
-
-    The script will prompt you to enter the Spotify playlist URL (e.g., https://open.spotify.com/playlist/xyz).
-    Songs will be downloaded to the folder you’re in (e.g., my_playlist_songs).
-
-Alternatively, you can specify a different folder:
-bash
-./spotify.sh /path/to/download/folder
-
-If the folder doesn’t exist, the script will create it.
-Step 5: Enter the Playlist URL
-
-When prompted, paste the Spotify playlist URL and press Enter. The script will download the songs.
 Example
 
-Here’s a complete example:
+$ ./spotidrop.sh ~/Music
+Reminder: Use a VPN for privacy while downloading.
+Press Enter to continue...
 
-    Create and enter a folder:
-    bash
+Enter the Spotify playlist URL: https://open.spotify.com/playlist/xyz
+Downloading playlist to ~/Music...
+Download complete!
 
-mkdir my_playlist_songs
-cd my_playlist_songs
-Download the script:
-bash
-curl -O https://raw.githubusercontent.com/yourusername/SpotiDrop/main/spotify.sh
-Make it executable:
-bash
-chmod +x spotify.sh
-Run the script:
-bash
+Troubleshooting
 
-    ./spotify.sh .
-    Enter a playlist URL when prompted, e.g., https://open.spotify.com/playlist/xyz.
+    spotdl is not installed: The script will display an error message if spotdl is not installed. Install it with pip3 install spotdl.
 
-The songs will download into my_playlist_songs.
+    ffmpeg is not installed: If ffmpeg is missing, the script will notify you. Install it using the provided platform-specific instructions.
+
+    Invalid Playlist URL: If you don't provide a valid URL, the script will prompt an error and exit.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+Contributing
+
+Feel free to submit issues or pull requests for any improvements or bug fixes.
