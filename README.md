@@ -26,6 +26,7 @@ python3 --version
 pip3 --version
 
 If not installed, download them from python.org.
+
 2. Install spotdl
 
 Run this command:
