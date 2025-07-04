@@ -11,7 +11,7 @@ git clone https://github.com/MikiyG/SpotiDrop.git
 cd SpotiDrop
 
 # OR (without git)
-# curl -O https://raw.githubusercontent.com/yourusername/SpotiDrop/main/spotify.sh
+# curl -O https://raw.githubusercontent.com/MikiyG/SpotiDrop/main/spotify.sh
 
 # 3. Create and go to download folder
 mkdir my_playlist_songs
