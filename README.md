@@ -10,9 +10,6 @@ pip3 install spotdl
 git clone https://github.com/MikiyG/SpotiDrop.git
 cd SpotiDrop
 
-# OR (without git)
-# curl -O https://raw.githubusercontent.com/MikiyG/SpotiDrop/main/spotify.sh
-
 # 3. Create and go to download folder
 mkdir my_playlist_songs
 cd my_playlist_songs
